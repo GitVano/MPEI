@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    const items = ["Чтобы", "активировать", "Windows", "перейдите", "раздел"];
+    function showAlerts() {
+            // Исходный массив
+            alert("Исходный массив: " + items.join(", "));
+            
+            // Сортированный по алфавиту
+            const sortedAlphabetically = [...items].sort();
+            alert("Сортированный по алфавиту: " + sortedAlphabetically.join(", "));
+            
+            // Сортированный в обратном порядке
+            const sortedReverse = [...items].sort().reverse();
+            alert("Сортированный в обратном порядке: " + sortedReverse.join(", "));
+            
+            // Сортированный по длине
+            const sortedByLength = [...items].sort((a, b) => a.length - b.length);
+            alert("Сортированный по длине: " + sortedByLength.join(", "));
+        }
+  </script>
+</head>
+<body>
+
+  <input type="button" value="Вывод массива в диалоговом окне" onclick="showAlerts()" />
+</body>
+</html>

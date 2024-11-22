@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    function updateDateTime() {
+      const now = new Date();
+      const options = { day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' };
+      document.getElementById("dateTime1").value = now.toLocaleString('ru-RU', options); 
+    }
+    setInterval(updateDateTime, 1000); 
+    function showAlert() {
+            alert('Надо же получилось!');
+        }
+  </script>
+</head>
+<body onload="updateDateTime()">
+  <script src="script.js"></script> </head>
+  <script>
+   function updateDateTime() {
+      const now = new Date();
+      const options = { month: 'long', hour: 'numeric', minute: 'numeric', second: 'numeric' };
+      document.getElementById("dateTime2").value = now.toLocaleString('ru-RU', options); 
+    }
+    setInterval(updateDateTime, 1000);
+    updateDateTime(); 
+  </script>
+
+  <label for="dateTime1">Я скрипт из head и текущий вывожу день и текущее время</label><br>
+  <input style="width: 200px;" type="text" id="dateTime1" readonly><br>
+
+  <label for="dateTime2">Я скрипт из body вывожу текущий месяц и текущее время</label><br>
+  <input style="width: 200px;" type="text" id="dateTime2" readonly><br>
+  
+  <label for="dateTime3">Я скрипт из файла вывожу текущий год и текущее время</label><br>
+  <input style="width: 200px;" type="text" id="dateTime3" readonly><br>
+
+  <a href="javascript:alert('Hello, Mpei!');">Я ссылка на диалоговое окно</a>
+  <input type="button" value="Я кнопка перехода на диалоговое окно" onclick="alert('Hello, Mpei!');">
+  <input type="button" value="Я кнопка перехода на диалоговое окно с JS" onclick="showAlert()">
+  <button onclick="showAlert()">Я конечно не html, но попробую запустить диалоговое окно</button>
+</body>
+</html>
